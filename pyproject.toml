@@ -1,3 +1,27 @@
+[project]
+name = "modern-software-dev-assignments"
+version = "0.1.0"
+description = "Course assignments with FastAPI + SQLite starter and tooling"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.23.0",
+    "sqlalchemy>=2.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0",
+    "ollama>=0.5.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "httpx>=0.24.0",
+    "black>=24.1.0",
+    "ruff>=0.4.0",
+    "pre-commit>=3.6.0",
+]
+
 [tool.poetry]
 name = "modern-software-dev-assignments"
 version = "0.1.0"
@@ -24,9 +48,8 @@ black = ">=24.1.0"
 ruff = ">=0.4.0"
 pre-commit = ">=3.6.0"
 
-[build-system]
-requires = ["poetry-core>=1.7.0"]
-build-backend = "poetry.core.masonry.api"
+# build-system 섹션을 제거하여 uv run이 스크립트를 직접 실행하도록 함
+# Poetry는 여전히 의존성 관리용으로 사용 가능
 
 [tool.black]
 line-length = 100
